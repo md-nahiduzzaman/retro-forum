@@ -41,8 +41,106 @@
       };
     </script>
   </head>
-  <body>
-    <header></header>
+  <body class="font-mulish">
+    <header>
+      <!-- nav sec -->
+      <section class="container mx-auto py-12">
+        <div class="navbar bg-base-100">
+          <div class="flex-1">
+            <img src="./images/logo.png" alt="" />
+          </div>
+          <div class="flex-none">
+            <div class="dropdown dropdown-end flex gap-3">
+              <div class="tooltip" data-tip="Home">
+                <button
+                  class="btn btn-ghost btn-circle bg-[#12132D08] border border-[#0307121a]"
+                >
+                  <img src="./images/home.png" alt="" />
+                </button>
+              </div>
+              <div class="tooltip" data-tip="Write">
+                <button
+                  class="btn btn-ghost btn-circle bg-[#12132D08] border border-[#0307121a]"
+                >
+                  <img src="./images/write.png" alt="" />
+                </button>
+              </div>
+              <div class="tooltip" data-tip="Contact">
+                <button
+                  class="btn btn-ghost btn-circle bg-[#12132D08] border border-[#0307121a]"
+                >
+                  <img src="./images/contact.png" alt="" />
+                </button>
+              </div>
+              <div class="tooltip" data-tip="Flag">
+                <button
+                  class="btn btn-ghost btn-circle bg-[#12132D08] border border-[#0307121a]"
+                >
+                  <img src="./images/flag.png" alt="" />
+                </button>
+              </div>
+              <button class="btn rounded-full bg-[#797DFC] text-white">
+                Sign In
+              </button>
+            </div>
+            <div class="dropdown dropdown-end"></div>
+          </div>
+        </div>
+      </section>
+      <!-- hero sec -->
+      <section class="container mx-auto">
+        <div
+          class="hero h-[60vh] rounded-3xl"
+          style="background-image: url(./images/banner.png)"
+        >
+          <!-- <div class="hero-overlay bg-opacity-60"></div> -->
+          <div class="hero-content flex gap-20">
+            <!-- left side content -->
+            <div>
+              <h1 class="font-black text-6xl text-white leading-[140%]">
+                Welcome to the <br /><span class="text-[#797DFC]">ReTro</span>
+                Forum
+              </h1>
+              <p class="text-white font-inter opacity-[80%] pt-5 pb-8">
+                Share your favorite opinion and win and wp <br />
+                forum coffee mug!
+              </p>
+              <div class="bg-white rounded-full flex justify-between p-2">
+                <input
+                  type="text"
+                  placeholder="Type here"
+                  class="input w-full max-w-xs rounded-full"
+                />
+                <button
+                  class="btn border-none rounded-full bg-[#797DFC] text-white px-8"
+                >
+                  Search
+                </button>
+              </div>
+            </div>
+            <!-- right side content -->
+            <div class="bg-white p-12 rounded-[32px] flex flex-col gap-6">
+              <div class="flex justify-between w-72">
+                <p>Registered Users</p>
+                <p>01</p>
+              </div>
+              <div class="flex justify-between">
+                <p>Forum</p>
+                <p>05</p>
+              </div>
+              <div class="flex justify-between">
+                <p>Topics</p>
+                <p>01</p>
+              </div>
+              <div class="flex justify-between">
+                <p>Replies</p>
+                <p>01</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
     <main></main>
     <footer></footer>
     <script src="./scripts/app.js"></script>
