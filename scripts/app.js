@@ -4,6 +4,8 @@ const loadPost = async (category) => {
   //show loading spinner
   document.getElementById("loading-spinner").style.display = "block";
 
+  await new Promise((delay) => setTimeout(delay, 2000));
+
   let allPostApi = "https://openapi.programming-hero.com/api/retro-forum/posts";
 
   if (category) {
@@ -23,7 +25,7 @@ const loadPost = async (category) => {
     const div = document.createElement("div");
     div.classList.add("singlePost");
     div.innerHTML = `
-    <div class="bg-[#F3F3F5] flex flex-row gap-6 p-10 rounded-2xl">
+    <div class="bg-[#F3F3F5] flex flex-col lg:flex-row gap-6 p-4 lg:p-10 rounded-2xl">
                 <!-- avatar -->
                 <div>
                   <div class="relative avatar ">
@@ -96,6 +98,8 @@ const loadLatestPost = async () => {
   //show loading spinner
   document.getElementById("loading-spinner2").style.display = "block";
 
+  await new Promise((delay) => setTimeout(delay, 2000));
+
   const response = await fetch(
     "https://openapi.programming-hero.com/api/retro-forum/latest-posts"
   );
@@ -109,7 +113,7 @@ const loadLatestPost = async () => {
     div.classList.add("singleLatestPost");
     div.innerHTML = `
     <div>
-            <div class="card w-96 bg-base-100 border border-gray-300">
+            <div class="card bg-base-100 border border-gray-300 items-center">
               <figure class="px-10 pt-10">
                 <img
                   src=${item.cover_image}
@@ -123,7 +127,7 @@ const loadLatestPost = async () => {
                   <p class="">${
                     item.author.posted_date
                       ? item.author.posted_date
-                      : "Unknown"
+                      : "No Publish Date"
                   }</p>
                 </div>
                 <h2 class="card-title font-extrabold text-[#12132D]">
@@ -181,7 +185,7 @@ const handleMarkAsReadBtn = (itemDescription, itemViewCount) => {
   const div = document.createElement("div");
   div.classList.add("singleMarkRead");
   div.innerHTML = `
-  <div class="flex justify-between bg-white p-4 rounded-xl">
+  <div class="flex flex-col lg:flex-row justify-between bg-white p-4 rounded-xl">
                 <p class="font-inter font-semibold text-base text-[#12132D]">
                   ${itemDescription}
                 </p>

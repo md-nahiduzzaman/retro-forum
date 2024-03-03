@@ -41,7 +41,7 @@
       };
     </script>
   </head>
-  <body class="font-mulish">
+  <body class="font-mulish pl-4 pr-4">
     <header>
       <!-- nav sec -->
       <section class="container mx-auto py-12">
@@ -186,13 +186,13 @@
       <!-- hero sec -->
       <section class="container mx-auto">
         <div
-          class="hero h-[60vh] rounded-3xl"
+          class="hero h-[100vh] lg:h-[60vh] rounded-3xl"
           style="background-image: url(./images/banner.png)"
         >
           <!-- <div class="hero-overlay bg-opacity-60"></div> -->
-          <div class="hero-content flex gap-20">
+          <div class="hero-content p-0 flex flex-col lg:flex-row lg:gap-20">
             <!-- left side content -->
-            <div>
+            <div class="text-center lg:text-left">
               <h1 class="font-black text-6xl text-white leading-[140%]">
                 Welcome to the <br /><span class="text-[#797DFC]">ReTro</span>
                 Forum
@@ -246,7 +246,7 @@
         <div class="flex flex-col items-center mb-12">
           <h1 class="font-black text-4xl text-[#12132D]">Let's Discuss</h1>
           <p
-            class="font-inter text-xl text-[#12132D99] w-[60%] text-center mt-6"
+            class="font-inter text-xl text-[#12132D99] lg:w-[60%] text-center mt-6"
           >
             Yes, you can run unit tests and view the results directly within the
             app. The integrated testing features allow for a streamlined .
@@ -258,11 +258,11 @@
         </div>
         <!-- discuss container -->
 
-        <div class="flex gap-6">
+        <div class="flex flex-col gap-6 lg:flex-row">
           <!-- left side container -->
-          <div id="postContainer" class="w-3/5 space-y-6"></div>
+          <div id="postContainer" class="lg:w-3/5 space-y-6"></div>
           <!-- right side container -->
-          <div class="bg-[#12132D0d] p-6 w-2/5 rounded-2xl space-y-6">
+          <div class="bg-[#12132D0d] p-6 lg:w-2/5 rounded-2xl space-y-6">
             <!-- title -->
             <div class="flex justify-between items-center">
               <h4 class="font-bold text-xl text-[#12132D]">Title</h4>
@@ -279,15 +279,17 @@
 
       <!-- news letter section -->
       <section class="container mx-auto">
-        <div class="hero h-96 rounded-3xl bg-[#12132D]">
+        <div class="hero h-[100vh] lg:h-96 rounded-3xl bg-[#12132D]">
           <!-- <div class="hero-overlay bg-opacity-60"></div> -->
-          <div class="hero-content flex gap-20">
+          <div class="hero-content flex flex-col lg:flex-row gap-10 lg:gap-20">
             <!-- left side content -->
-            <div>
+            <div class="text-center lg:text-left">
               <h1 class="font-black text-6xl text-white leading-[140%]">
                 Join Our Forum
               </h1>
-              <p class="text-white font-inter opacity-[80%] pt-5 pb-8 w-4/5">
+              <p
+                class="text-white font-inter opacity-[80%] pt-5 pb-8 lg:w-4/5 mx-auto lg:mx-0"
+              >
                 Share your favorite opinion and win and wp forum coffee mug!
                 Yes, you can run unit tests and view the results directly within
                 the app.
@@ -312,7 +314,7 @@
         <div class="flex flex-col items-center mb-12">
           <h1 class="font-black text-4xl text-[#12132D]">Latest Posts</h1>
           <p
-            class="font-inter text-xl text-[#12132D99] w-[60%] text-center mt-6"
+            class="font-inter text-xl text-[#12132D99] lg:w-[60%] text-center mt-6"
           >
             Yes, you can run unit tests and view the results directly within the
             app. The integrated testing features allow for a streamlined .
@@ -323,7 +325,10 @@
           <span class="loading loading-spinner loading-lg"></span>
         </div>
         <!-- latest post container -->
-        <div id="latestPostContainer" class="grid grid-cols-3"></div>
+        <div
+          id="latestPostContainer"
+          class="flex flex-col gap-6 lg:grid lg:grid-cols-3"
+        ></div>
       </section>
     </main>
     <footer class="bg-[#12132D1a]">
@@ -331,7 +336,7 @@
         class="container mx-auto pt-28 pb-28 flex flex-col justify-center text-center"
       >
         <img class="w-[103px] mx-auto" src="./images/logo.png" alt="" />
-        <p class="opacity-[70%] mt-4 mb-8 w-[60%] mx-auto">
+        <p class="opacity-[70%] mt-4 mb-8 lg:w-[60%] mx-auto">
           Contrary to popular belief, Lorem Ipsum is not simply random text. It
           has roots in a piece of classical Latin literature from 45 BC
         </p>
