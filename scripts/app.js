@@ -1,13 +1,23 @@
 // console.log("yahya");
 
-const loadPost = async () => {
-  const response = await fetch(
-    "https://openapi.programming-hero.com/api/retro-forum/posts"
-  );
+const loadPost = async (category) => {
+  //show loading spinner
+  document.getElementById("loading-spinner").style.display = "block";
+
+  let allPostApi = "https://openapi.programming-hero.com/api/retro-forum/posts";
+
+  if (category) {
+    allPostApi = allPostApi + `?category=${category}`;
+    console.log(allPostApi);
+  }
+  const response = await fetch(allPostApi);
   const data = await response.json();
   //console.log(data.posts);
 
   const postContainer = document.getElementById("postContainer");
+
+  //clear container
+  postContainer.textContent = "";
 
   data.posts.forEach((item) => {
     const div = document.createElement("div");
@@ -75,9 +85,17 @@ const loadPost = async () => {
     `;
     postContainer.appendChild(div);
   });
+
+  // hide loading spinner
+  setTimeout(() => {
+    document.getElementById("loading-spinner").style.display = "none";
+  }, 2000);
 };
 
 const loadLatestPost = async () => {
+  //show loading spinner
+  document.getElementById("loading-spinner2").style.display = "block";
+
   const response = await fetch(
     "https://openapi.programming-hero.com/api/retro-forum/latest-posts"
   );
@@ -139,6 +157,11 @@ const loadLatestPost = async () => {
     `;
     latestPostContainer.appendChild(div);
   });
+
+  // hide loading spinner
+  setTimeout(() => {
+    document.getElementById("loading-spinner2").style.display = "none";
+  }, 2000);
 };
 
 const handleMarkAsReadBtn = (itemDescription, itemViewCount) => {
@@ -174,6 +197,16 @@ const handleMarkAsReadBtn = (itemDescription, itemViewCount) => {
   `;
 
   markReadContainer.appendChild(div);
+};
+
+const handleSearchBtn = () => {
+  const value = document.getElementById("searchField").value;
+  console.log(value);
+  if (value) {
+    loadPost(value);
+  } else {
+    alert("Please enter a valid category name");
+  }
 };
 
 loadPost();

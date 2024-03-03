@@ -203,11 +203,13 @@
               </p>
               <div class="bg-white rounded-full flex justify-between p-2">
                 <input
+                  id="searchField"
                   type="text"
                   placeholder="Type here"
                   class="input w-full max-w-xs rounded-full"
                 />
                 <button
+                  onclick="handleSearchBtn()"
                   class="btn border-none rounded-full bg-[#797DFC] text-white px-8"
                 >
                   Search
@@ -250,7 +252,12 @@
             app. The integrated testing features allow for a streamlined .
           </p>
         </div>
+        <!-- loader -->
+        <div id="loading-spinner" class="text-center my-40 hidden">
+          <span class="loading loading-spinner loading-lg"></span>
+        </div>
         <!-- discuss container -->
+
         <div class="flex gap-6">
           <!-- left side container -->
           <div id="postContainer" class="w-3/5 space-y-6"></div>
@@ -310,6 +317,10 @@
             Yes, you can run unit tests and view the results directly within the
             app. The integrated testing features allow for a streamlined .
           </p>
+        </div>
+        <!-- loader -->
+        <div id="loading-spinner2" class="text-center my-40 hidden">
+          <span class="loading loading-spinner loading-lg"></span>
         </div>
         <!-- latest post container -->
         <div id="latestPostContainer" class="grid grid-cols-3"></div>
