@@ -252,58 +252,11 @@
         </div>
         <!-- discuss container -->
         <div class="flex gap-6">
-          <div class="w-3/5 space-y-6">
-            <div class="bg-[#F3F3F5] flex flex-row gap-6 p-10 rounded-2xl">
-              <!-- avatar -->
-              <div>
-                <div class="avatar online">
-                  <div class="w-24 rounded-xl">
-                    <img
-                      src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                    />
-                  </div>
-                </div>
-              </div>
-              <!-- details -->
-              <div>
-                <div
-                  class="flex gap-5 font-inter font-medium text-sm text-[#12132Dcc] mb-3"
-                >
-                  <p># <span>Music</span></p>
-                  <p>Author: <span>Awlad Hossain</span></p>
-                </div>
-                <div>
-                  <h2 class="font-bold text-xl text-[#12132D] mb-4">
-                    10 Kids Unaware of Their Halloween Costume
-                  </h2>
-                  <p class="font-inter text-base text-[#12132D99] w-3/4">
-                    It's one thing to subject yourself to ha Halloween costume
-                    mishap because, hey that's your prerogative
-                  </p>
-                </div>
-                <div class="divider pt-5 pb-5"></div>
-                <div class="flex flex-row justify-between items-center">
-                  <div class="flex gap-6 font-inter text-base text-[#12132D99]">
-                    <div class="flex gap-3">
-                      <img src="./images/read.png" alt="" />
-                      <p>560</p>
-                    </div>
-                    <div class="flex gap-3">
-                      <img src="./images/view.png" alt="" />
-                      <p>1568</p>
-                    </div>
-                    <div class="flex gap-3">
-                      <img src="./images/time.png" alt="" />
-                      <p>5 min</p>
-                    </div>
-                  </div>
-                  <div class="">
-                    <button><img src="./images/markRead.png" alt="" /></button>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <!-- left side container -->
+          <div id="postContainer" class="w-3/5 space-y-6">
+            <div class="singlePost"></div>
           </div>
+          <!-- right side container -->
           <div class="bg-[#12132D0d] p-6 w-2/5 rounded-2xl space-y-6">
             <!-- title -->
             <div class="flex justify-between items-center">
@@ -374,48 +327,8 @@
             app. The integrated testing features allow for a streamlined .
           </p>
         </div>
-        <!-- post container -->
-        <div class="grid grid-cols-3">
-          <!-- cards -->
-          <div>
-            <div class="card w-96 bg-base-100 border border-gray-300">
-              <figure class="px-10 pt-10">
-                <img
-                  src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                  alt="Shoes"
-                  class="rounded-xl"
-                />
-              </figure>
-              <div class="card-body">
-                <div class="flex gap-2 opacity-[60%] mb-3">
-                  <img src="./images/calender.png" alt="" />
-                  <p class="">29 January 2024</p>
-                </div>
-                <h2 class="card-title font-extrabold text-[#12132D]">
-                  What will a mars habitat force that impact in our daily
-                  life!!!
-                </h2>
-                <p class="opacity-[60%]">
-                  Yes, you can run unit tests and view the results directly
-                  within the app.
-                </p>
-                <div class="flex gap-3 mt-4">
-                  <div class="avatar placeholder">
-                    <div
-                      class="bg-neutral text-neutral-content rounded-full w-12"
-                    >
-                      <span>SY</span>
-                    </div>
-                  </div>
-                  <div>
-                    <h5 class="font-bold">Cameron Williamson</h5>
-                    <p class="opacity-[60%]">Unknown</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- latest post container -->
+        <div id="latestPostContainer" class="grid grid-cols-3"></div>
       </section>
     </main>
     <footer class="bg-[#12132D1a]">
