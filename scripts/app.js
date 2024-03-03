@@ -59,7 +59,7 @@ const loadPost = async () => {
                       </div>
                     </div>
                     <div class="">
-                      <button>
+                      <button onclick="handleMarkAsReadBtn('${item.title}', ${item.view_count})">
                         <img src="./images/markRead.png" alt="" />
                       </button>
                     </div>
@@ -69,6 +69,8 @@ const loadPost = async () => {
     `;
     postContainer.appendChild(div);
   });
+
+  //read count
 };
 
 const loadLatestPost = async () => {
@@ -125,6 +127,41 @@ const loadLatestPost = async () => {
     `;
     latestPostContainer.appendChild(div);
   });
+};
+
+const handleMarkAsReadBtn = (itemDescription, itemViewCount) => {
+  //console.log(des, view);
+
+  //update counter
+  const readCount = document.getElementById("read-count");
+  const readCountText = readCount.innerText;
+  const readCountTextValue = parseInt(readCountText);
+
+  const updateValue = readCountTextValue + 1;
+  readCount.innerText = updateValue;
+
+  //set content
+
+  const markReadContainer = document.getElementById("markReadContainer");
+  const div = document.createElement("div");
+  div.classList.add("singleMarkRead");
+  div.innerHTML = `
+  <div class="flex justify-between bg-white p-4 rounded-xl">
+                <p class="font-inter font-semibold text-base text-[#12132D]">
+                  ${itemDescription}
+                </p>
+                <div class="flex gap-2">
+                  <img src="./images/view.png" alt="" />
+                  <p
+                    class="font-inter font-semibold text-base text-[#12132D99]"
+                  >
+                    ${itemViewCount}
+                  </p>
+                </div>
+              </div>
+  `;
+
+  markReadContainer.appendChild(div);
 };
 
 loadPost();
