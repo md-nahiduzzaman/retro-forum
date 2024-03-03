@@ -41,7 +41,7 @@
       };
     </script>
   </head>
-  <body class="font-mulish pl-4 pr-4">
+  <body class="font-mulish pl-4 pr-4 lg:pl-0 lg:pr-0">
     <header>
       <!-- nav sec -->
       <section class="container mx-auto py-12">
@@ -193,7 +193,9 @@
           <div class="hero-content p-0 flex flex-col lg:flex-row lg:gap-20">
             <!-- left side content -->
             <div class="text-center lg:text-left">
-              <h1 class="font-black text-6xl text-white leading-[140%]">
+              <h1
+                class="font-black text-4xl lg:text-6xl text-white leading-[140%]"
+              >
                 Welcome to the <br /><span class="text-[#797DFC]">ReTro</span>
                 Forum
               </h1>
@@ -206,7 +208,7 @@
                   id="searchField"
                   type="text"
                   placeholder="Type here"
-                  class="input w-full max-w-xs rounded-full"
+                  class="input rounded-full"
                 />
                 <button
                   onclick="handleSearchBtn()"
@@ -218,7 +220,7 @@
             </div>
             <!-- right side content -->
             <div class="bg-white p-12 rounded-[32px] flex flex-col gap-6">
-              <div class="flex justify-between w-72">
+              <div class="flex justify-between w-60 lg:w-72">
                 <p>Registered Users</p>
                 <p>01</p>
               </div>
