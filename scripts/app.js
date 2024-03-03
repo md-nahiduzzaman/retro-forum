@@ -16,16 +16,20 @@ const loadPost = async () => {
     <div class="bg-[#F3F3F5] flex flex-row gap-6 p-10 rounded-2xl">
                 <!-- avatar -->
                 <div>
-                  <div class="avatar online">
+                  <div class="relative avatar ">
                     <div class="w-24 rounded-xl">
+                    <p class="absolute w-4 h-4 top-[-5px] right-[-5px] rounded-full ${
+                      item.isActive ? "bg-green-500" : "bg-red-500"
+                    } "></p>
                       <img
                         src=${item.image}
                       />
+                      <p class="w-2 h-2 rounded-full bg-green-500"></p>
                     </div>
                   </div>
                 </div>
                 <!-- details -->
-                <div>
+                <div class ="w-full">
                   <div
                     class="flex gap-5 font-inter font-medium text-sm text-[#12132Dcc] mb-3"
                   >
@@ -59,7 +63,9 @@ const loadPost = async () => {
                       </div>
                     </div>
                     <div class="">
-                      <button onclick="handleMarkAsReadBtn('${item.title}', ${item.view_count})">
+                      <button onclick="handleMarkAsReadBtn('${item.title}', ${
+      item.view_count
+    })">
                         <img src="./images/markRead.png" alt="" />
                       </button>
                     </div>
@@ -69,8 +75,6 @@ const loadPost = async () => {
     `;
     postContainer.appendChild(div);
   });
-
-  //read count
 };
 
 const loadLatestPost = async () => {
@@ -98,7 +102,11 @@ const loadLatestPost = async () => {
               <div class="card-body">
                 <div class="flex gap-2 opacity-[60%] mb-3">
                   <img src="./images/calender.png" alt="" />
-                  <p class="">${item.author.posted_date}</p>
+                  <p class="">${
+                    item.author.posted_date
+                      ? item.author.posted_date
+                      : "Unknown"
+                  }</p>
                 </div>
                 <h2 class="card-title font-extrabold text-[#12132D]">
                   ${item.title}
@@ -118,7 +126,11 @@ const loadLatestPost = async () => {
                   </div>
                   <div>
                     <h5 class="font-bold">${item.author.name}</h5>
-                    <p class="opacity-[60%]">${item.author.designation}</p>
+                    <p class="opacity-[60%]">${
+                      item.author.designation
+                        ? item.author.designation
+                        : "Unknown"
+                    }</p>
                   </div>
                 </div>
               </div>
